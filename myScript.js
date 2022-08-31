@@ -127,4 +127,19 @@ const result = isPalindromeWord(word)
 
 console.log(result)
 
+switch (result) {
+
+    case true:
+        console.log('E\' palindroma');
+        break;
+
+    case false:
+        console.log('Non è palindroma');
+        break;
+
+    case null:
+        console.log('Non è una parola');
+        break;
+}
+
 

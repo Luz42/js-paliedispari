@@ -58,27 +58,30 @@ Consigli del giorno
 */
 
 
-
+//funzione che verifica l'uguaglianza degli
 
 // chiedere la parola
 
-let word = prompt('Inserire una parola')
+//CREATA funzione per verificare de un testo è palindromo o meno
+
+function isPalindromeWord(word){
 
 // togliere gli spazi prima e dopo
 
-// verificare che sia una parola
-
 let onlyWord = word.trim()
+
+
+// verificare che sia una parola
 
 if (isNaN(onlyWord)){
 
-        console.log(onlyWord)
+        //console.log(onlyWord)
 
         // allora trasformo la stringa in un array
 
         const arrayWord = onlyWord.split("");
         
-        console.log(arrayWord)
+        //console.log(arrayWord)
 
         // allora divido l'array in due parti uguali
 
@@ -90,8 +93,8 @@ if (isNaN(onlyWord)){
 
         const secondHalf = arrayWord.splice(-middleIndex).reverse();
 
-        console.log(firstHalf); 
-        console.log(secondHalf);
+        //console.log(firstHalf); 
+        //console.log(secondHalf);
 
         for(let i = 0; i < secondHalf.length; i++){
 
@@ -99,17 +102,29 @@ if (isNaN(onlyWord)){
             // abbiamo stabilito se la parola è palindroma
             if(firstHalf[i] === secondHalf[i]){
 
-                console.log('è palindromo')        
+                //console.log('è palindromo')
+                return true        
             
             }
             else{
             
-                console.log('non è palindromo')
-                // oppure avremo un RETURN true/false
-
+                //console.log('non è palindromo')
+                return false
+            
             }
         }
     }
     else{
-    console.log('inserisci una parola')
+    
+        return null
 }
+}
+//FINE FUNZIONE
+
+let word = prompt('Inserire una parola')
+
+const result = isPalindromeWord(word)
+
+console.log(result)
+
+

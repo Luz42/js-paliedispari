@@ -70,7 +70,7 @@ let word = prompt('Inserire una parola')
 
 let onlyWord = word.trim()
 
-    if (isNaN(onlyWord)){
+if (isNaN(onlyWord)){
 
         console.log(onlyWord)
 
@@ -93,34 +93,23 @@ let onlyWord = word.trim()
         console.log(firstHalf); 
         console.log(secondHalf);
 
-        
+        for(let i = 0; i < secondHalf.length; i++){
 
+            //creo una funzione che mi permette di ciclare il contenuto degli array
+            // abbiamo stabilito se la parola è palindroma
+            if(firstHalf[i] === secondHalf[i]){
 
+                console.log('è palindromo')        
+            
+            }
+            else{
+            
+                console.log('non è palindromo')
+                // oppure avremo un RETURN true/false
 
+            }
+        }
     }
     else{
     console.log('inserisci una parola')
-    }
-
-
-
-
-// se la lunghezza dell'array è divisibile per 2
-
-//     array.lenght % 2 ===0
-
-
-//     .split("")/splice()
-
-
-//     array.reverse()
-
-// se le lettere presenti nel primo array sono presenti nel secondo arrary
-
-//     creo una funzione che mi permette di ciclare il contenuto degli array dove:
-
-//     array1[i] === array2 [i]
-
-// allora avremo un RETURN true
-
-// abbiamo stabilito che la parola è palindroma
+}

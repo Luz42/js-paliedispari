@@ -41,6 +41,16 @@ abbiamo stabilito che la parola è palindroma
 */
 
 
+
+
+
+
+
+
+
+
+//ESERCIZIO 1
+
 //CREATA funzione per verificare de un testo è palindromo o meno
 
 function isPalindromeWord(word){
@@ -116,19 +126,30 @@ console.log(result)
 switch (result) {
 
     case true:
-        console.log('E\' palindroma');
+        alert('E\' palindroma');
         break;
 
     case false:
-        console.log('Non è palindroma');
+        alert('Non è palindroma');
         break;
 
     case null:
-        console.log('Non è una parola');
+        alert('Non è una parola');
         break;
 }
 
 //FINE ESERCIZIO 1
+
+
+
+
+
+
+
+
+
+
+
 
 //ESERCIZIO 2
 
@@ -144,16 +165,68 @@ Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto
 */
 
-//chiedi all'utente se sceglie pari o dispari
+//FUNZIONE 1 per ottenere un nnumero random da 1 a 5
+function getRandomNumber(min, max) {
+    const range = max - min + 1
+    
+    const randomNumber = Math.floor(Math.random() * range) + min;
+    
+    return randomNumber
 
+}
+
+//FUNZIONE 2 per verificare se un numero è pari o dispari
+
+function isOddOrEven(verifyNumber) {
+
+    if (verifyNumber % 2 === 0){
+
+        return 'Pari'
+
+    }
+    else
+        return 'Dispari'
+
+}
+
+
+//chiedi all'utente se sceglie pari o dispari
 //chiedi all'utente un numero compreso tra 1 e 5
+let resultHTML = document.getElementById('result')
+const startButton = document.getElementById('startButton')
+
+console.log(startButton)
+
+startButton.addEventListener('click', function(){
+
+    resultHTML.innerHTML = ''
+    const userChoice = document.getElementById('inputGroupSelect01').value
+    const userNumber = document.getElementById('inputGroupSelect02').value
+    console.log('hai scelto ' + userChoice)
+    console.log('questo è il tuo numero ' + parseInt(userNumber))
+
+    const computerNumber = getRandomNumber(1, 5)
+    console.log('questo è il numero del pc ' + computerNumber)
+
+    const sum = parseInt(computerNumber) + parseInt(userNumber)
+    console.log('questa è la somma ' + sum)
+
+    const result = (isOddOrEven(sum))
+
+    let final = (result === userChoice) ? resultHTML.innerHTML += 'HAI VINTO' : resultHTML.innerHTML += 'HAI PERSO';
+
+})
 
 //const userNumber = parent(prompt('scegli un numero da 1 a 5'))
 
 //creo una funzione che genera un numero random da 1 a 5
 
 
+
+
 //creo una funzione che stabilisce se un numero è pari o dispari
+
+
 
 //chiedo un numero che deve essere compreso tra 1 e 5 e deve essere un numero
 
